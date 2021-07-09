@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+@keyframes float-short {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes float-med {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(40px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes float-long {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(80px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes wavy {
+    /* 0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 100vw;
+    } */
+    50%{
+        background-position: 0 0;
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    overflow:visible;
+    background: #141821;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+}
+
+.space{
+    height: 40vh;
+}
+
+/* .projects::before{
+    content: '';
+    position: absolute;
+    top: 170%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00,#f0f);
+    clip-path: circle(30% at right 70%);
+}
+
+.projects::after{
+    content: '';
+    position: absolute;
+    top: 170%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3,#e91e63);
+    clip-path: circle(20% at 10% 30%);
+} */
+.landing{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.landing .content{
+    width: auto;
+    padding: 50px 50px 50px 5px;
+    position: relative;
+    top: 300px;
+    left: 100px;
+    z-index: 999;
+}
+.landing .content h1{
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0.5rem 0px 1rem;
+    font-size: 4.5rem;
+    text-shadow: rgb(255 255 255 / 15%) 0px 5px 35px;
+    letter-spacing: 0.025em;
+}
+.landing .content p{
+    color: #fff;
+    font-size: 2rem;
+    letter-spacing: -0.003em;
+    line-height: 1.5;
+}
+
+.About{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.About #Abg{
+    position: absolute;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
+    clip-path: polygon(0 14%, 100% 0%, 100% 86%, 0 100%);
+    transition: top 0.9s ease-in-out;
+}
+
+.About #Abg h1{
+    margin-top: 150px;
+}
+
+.About #Abg p{
+    margin-top: 50px;
+    color: white;
+    font-size: 1.5rem;
+    padding: 50px;
+}
+
+.About #Abg #quote{
+    margin: 50px;
+    text-align: center;
+    color: white;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.7rem;
+    
+    padding: 50px;
+}
+
+.Skill{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Skill #Sbg{
+    position: absolute;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
+    clip-path: polygon(0 0%, 100% 14%, 100% 100%, 0 86%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: top 0.9s ease-in-out;
+}
+
+.Skill #Sbg h1{
+    margin-top: -200px;
+}
+
+.Skill #Sbg .list{
+    color : white;
+    font-size: 1.5rem;
+}
+
+.Skill #Sbg .button span{
+    position: relative;
+    z-index: 1;
+}
+.Skill #Sbg .button{
+    position: relative;
+    display: inline-flex;
+    margin-top: 50px;
+    padding : 10px 20px;
+    border-radius: 20px;
+    outline: none;
+    border : 2px solid white;
+    background: none;
+    color : white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.Skill #Sbg .button:hover span p{
+    background: -webkit-linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+}
+
+.Skill #Sbg .button::before{
+    content: "";
+    position: absolute;
+    left:-10px;
+    transform: translate(-50%,-50%);
+    width: 0px;
+    height: 0px;
+    background: white;
+    border-radius: 50%;
+    transition: width 0.5s , height 0.5s;
+}
+
+.Skill #Sbg .button:hover:before{
+    width: 400px;
+    height: 400px;
+}
+
+.projects{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+.title h1{
+    color: #fff;
+    font-size: 5rem;
+}
+.title p{
+    color: #fff;
+    font-size: 0.9rem;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap:wrap ;
+    z-index: 1;
+    margin: auto;
+}
+
+.container .card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 400px;
+    margin: 60px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;   
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+.container .card h2{
+    position: absolute;
+    font-size : 10em;
+    color : rgba(255, 255, 255, 0.05);
+    transition: 0.5s;
+    transform: translateY(0px);
+    opacity: 1;
+}
+.container .card:hover h2{
+    font-size: 8em;
+    transform: translate(50px,-130px);
+    /* opacity: 0; */
+}
+.container .card .content{
+
+    text-align: center;
+    padding: 20px;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.container .card:hover .content{
+    transform: translateY(0px);
+    opacity: 1;
+}
+/* .container .card .content h2{
+    position: absolute;
+    top : -80px;
+    right: 30px;
+    font-size : 8em;
+    color : rgba(255, 255, 255, 0.05)
+} */
+.container .card .content h3{
+    font-size: 1.8em;
+    color: #fff;
+    z-index: 1;
+}
+.container .card .content p{
+    font-size: 1em;
+    color : #fff;
+    font-weight: 300;
+}
+
+.container .card .content .git{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 15px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.container .card .content .git a{
+    color : #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .wrap{
+    height: auto;
+    width: 400px;
+    box-shadow:  20px 20px 60px #11141c,
+             -20px -20px 60px #171c26;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.contact .wrap .info{
+    margin: auto;
+    width: 250px;
+}
+
+.contact input[type="text"]:not(:placeholder-shown) {
+    background: #f44336;
+  }
+
+.contact input[type="email"]:not(:placeholder-shown) {
+    background: #f44336;
+  }
+.contact input[type="text"]:valid {
+    background: #e6eefa;
+    color: black
+  }
+  
+  .contact input[type="email"]:valid {
+    background: #e6eefa;
+    color: black
+  } 
+  .contact textarea:valid {
+    background: #e6eefa;
+    color: black
+  }
+
+.contact input[type="text"]:focus{
+    background: #e6eefa;
+    color: black
+}
+.contact input[type="email"]:focus{
+    background: #e6eefa;
+    color: black
+}
+.contact textarea:focus{
+    background: #e6eefa;
+    color: black
+}
+.contact input[type="text"]
+{
+    background: transparent;
+    border:none;
+    outline:none;
+    border-radius: 30px;
+    height: 30px;
+    width:240px;
+    box-shadow:inset 3px 4px 5px rgba(0,0,0,0.5),inset -3px -4px 5px rgba(194,195,186,0.1);
+    padding:10px 10px;
+    color:white;
+}
+.contact input[type="email"]
+{
+    background: transparent;
+    border:none;
+    outline:none;
+    border-radius: 30px;
+    height: 30px;
+    width:240px;
+    box-shadow:inset 3px 4px 5px rgba(0,0,0,0.5),inset -3px -4px 5px rgba(194,195,186,0.1);
+    padding:10px 10px;
+    color:white;
+}
+.contact textarea
+{
+    background: transparent;
+    border:none;
+    outline:none;
+    border-radius: 5px;
+    height: 80px;
+    width:240px;
+    box-shadow:inset 3px 4px 5px rgba(0,0,0,0.5),inset -3px -4px 5px rgba(194,195,186,0.1);
+    padding:10px 10px 0px;
+    color:white;
+    resize: vertical;
+}
+.contact input[type="submit"]
+{
+    background: transparent;
+    border:none;
+    outline:none;
+    border-radius: 30px;
+    height: 30px;
+    width:100px;
+    margin-left: 70px;
+    box-shadow:2px 3px 4px rgba(0,0,0,0.5),-2px -3px 4px rgba(194,195,186,0.1);
+    padding:0px 10px 0px;
+    color:white;
+    cursor: pointer;
+}
+.contact input[type="submit"]:active
+{
+    box-shadow:inset 3px 4px 5px rgba(0,0,0,0.5),inset -3px -4px 5px rgba(194,195,186,0.1);
+}
+
+.contact label{
+    color: #fff;
+    font-size: 1rem;
+}
+
+.wave{
+    width: 100vw;
+    height: 255px;
+    /* animation : wavy 10s linear infinite; */
+}
+
+.wave .links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 190px;
+}
+
+.wave .links a{
+    width: auto;
+    margin: 20px;
+    z-index: 2;
+}
+
+.wave svg{
+    display: block;
+    position: absolute;
+    width: 100vw;
+    z-index: -1;
+}
+/* Figures */
+
+.fig{
+    position: absolute;
+}
+
+/* LANDING */
+
+.landing #psquare{
+    top:75%;
+    left:10%;
+    animation: float-short 3s ease-in-out infinite;
+}
+.landing #ohex{
+    top:10%;
+    left:10%;
+    animation: float-short 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+.landing #Star{
+    top:25%;
+    left:35%;
+    /* animation: float-short 3s ease-in-out infinite; */
+}
+.landing #code{
+    top:65%;
+    left:65%;
+    animation: float-short 4s ease-in-out infinite;
+}
+.landing #darkcircle{
+    top:5%;
+    left:45%;
+    animation: float-short 3s ease-in-out infinite;
+}
+.landing #gcircle{
+    top : 5%;
+    right: -5%;
+    animation: float-short 3s ease-in-out infinite;
+}
+.landing #lightsquare{
+    top:80%;
+    left:48%;
+    /* animation: float-med 4s ease-in-out infinite; */
+}
+.landing #whitetri{
+    top:15%;
+    left:74%;
+    animation: float-long 9s ease-in-out infinite;
+}
+.landing #darkhexa{
+    top:60%;
+    left:35%;
+    animation: float-med 5s ease-in-out infinite;
+}
+.landing #rtri{
+    top:70%;
+    left:78%;
+    animation: float-med 5s ease-in-out infinite;
+}
+.landing #doubletri{
+    top:28%;
+    left:57%;
+    /* animation: float-short 3s ease-in-out infinite;*/
+} 
+
+/* PROJECTS */
+
+.projects #smallwhitesquare{
+    top:215%;
+    left:90%;
+    animation: float-short 3s ease-in-out infinite;
+}
+.projects #Pohex{
+    top:240%;
+    left:36%;
+    animation: float-short 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+.projects #Star{
+    top:25%;
+    left:35%;
+    /* animation: float-short 3s ease-in-out infinite; */
+}
+.projects #code{
+    top: 265%;
+    left:10%;
+    animation: float-med 4s ease-in-out infinite;
+}
+.projects #darkcircle{
+    top:5%;
+    left:45%;
+    animation: float-short 3s ease-in-out infinite;
+}
+.projects #gcircle{
+    top : 5%;
+    right: -5%;
+    animation: float-short 3s ease-in-out infinite;
+}
+.projects #lightsquare{
+    top:80%;
+    left:48%;
+    /* animation: float-med 4s ease-in-out infinite; */
+}
+.projects #whitetri{
+    top:15%;
+    left:74%;
+    animation: float-long 9s ease-in-out infinite;
+}
+.projects #darkhexa{
+    top:60%;
+    left:35%;
+    animation: float-med 5s ease-in-out infinite;
+}
+.projects #gtri{
+    top:290%;
+    left:85%;
+    animation: float-med 5s ease-in-out infinite;
+}
+.projects #doubletri{
+    top:250%;
+    left:67%;
+    animation: float-short 2s ease-in-out infinite;
+}
